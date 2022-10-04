@@ -18,18 +18,7 @@
             <br>
             <input type="submit" class="stat">
         </form>
-        <div class="pic-container">
-            {% if prof.picture %}
-                <img src="{{ prof.picture.url }}" class="pic">
-            {% else %}
-                <img src="#" class="pic">
-            {% endif %}
-            <form enctype="multipart/form-data" class="edit_img", method="post" >
-                {% csrf_token %}
-                {{form.as_p}}
-                <input type="submit" class="change_img">
-            </form>
-        </div>
+       
 </div>
 
 {% endblock %}
