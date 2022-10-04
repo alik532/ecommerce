@@ -1,0 +1,69 @@
+body {
+   background-color: beige;
+}
+
+.home-container {
+   display: grid;
+   grid-template-columns: 1fr 3fr;
+}
+
+.product-card {
+	display: block;
+	width: 100%;
+	float: left;
+	transition: width .2s;
+   background-color: rgb(197, 228, 137);
+
+}
+
+@media only screen and (min-width: 768px) {
+	.product-card {
+		width: 25%
+	}
+}
+
+.product {
+	display: block;
+	border: 1px solid #b5e9a7;
+	border-radius: 3px;
+	position: relative;
+	background: #fff;
+	margin: 5px 5px 5px 5px;
+	text-decoration: none;
+	color: #474747;
+	z-index: 0;
+	height: 200px;
+	width: 260px;
+}
+.products {
+	list-style: none;
+	margin: 0 -20px 0 0;
+	padding: 0;
+}
+
+.rating {
+   position: absolute;
+   right: 0;
+   bottom: -15;
+}
+
+.cost {
+   position: absolute;
+   bottom: -15;
+   left: 5px;
+}
+
+.title {
+   position: absolute;
+   top: -18;
+}
+
+.pic {
+	position: absolute;
+	height: 200px;
+	width: 235px;
+}
+
+.logout {
+	position: relative
+}

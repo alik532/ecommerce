@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="home-container">
+    <link rel="stylesheet" href="{% static 'cart.css' %}">
+    <div class="base-container">
+        <div class="product-grid">
+            <ul class="products-wrapper">
+                {% for product in products %}
+                <li class="product-card">
+                    <a href="http://127.0.0.1:8000/main/product?p={{ product.name }}" class="product">
+                        {% if product.picture %}
+                        <img src="{{ product.picture.url }}" class="pic">
+                        {% else %}
+                        <img src="#">
+                        {% endif %}
+                        <h2 class="title">{{product.name}}</h2>
+                        <h4 class="rating">{{product.rating}}&#9733;</h4>
+                        <h3 class="cost">{{product.cost}} $</h3>
+                    </a>
+                    <form action="delete/{{product.name}}/" method="get">
+                        <button type="submit" class="delete">Delete</button>
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="info-container">
+        
+    </div>
+</div>
+{% endblock %}

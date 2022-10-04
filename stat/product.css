@@ -1,0 +1,77 @@
+.main-content {
+    position: relative;
+    left: 12%;
+    height: 50%;
+    background-color: rgb(203, 226, 136);
+    width: 76%;
+    align-self: center;
+    border-style: groove;
+}
+
+.go-back {
+    position: absolute;
+    left: 130px;
+    top: 78px;
+    height: 30px;
+    width: 50px;
+}
+
+.observe-product-container {
+    position: absolute;
+    background-color: rgb(112, 112, 32);
+    height: 100%;
+    width: 70%;
+    top: 0;
+}
+
+.info {
+    position: relative;
+    left: 73%;
+}
+
+.details-container {
+    height: 50%;
+    width: 75.5%;
+    position: relative;
+    top: 20px;
+    left: 12.2%;
+    background-color: rgb(203, 226, 136);
+    border-style: groove;
+}
+
+.picture {
+    position: absolute;
+    height: 200px;
+    width: 400px;
+    top: 40px;
+    left: 185px;
+}
+
+.comment-section {
+    margin-top: 100px;
+    position: relative;
+    left: 12%;
+    bottom: 40px;
+    width: 75.5%;
+}
+
+.date {
+    color: rgb(45, 45, 45);
+    margin: 0;
+    padding: 0;
+}
+
+.comment {
+    background-color:rgb(203, 226, 136);
+    margin-bottom: 5px;
+    border-style: groove;
+}
+
+.com-user {
+    margin: 0;
+    padding: 0;
+}
+
+.user {
+    background-color: rgb(167, 189, 99);
+}

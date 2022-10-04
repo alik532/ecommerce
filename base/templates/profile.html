@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'profile.css' %}">
+
+<div class="profile-header">
+    {% for message in messages %}
+     <h4>{{ message }}</h4>
+    {% endfor %}
+    <h1 class="welcome">WELCOME</h1>
+    <h1 class="creds">{{prof.name}} {{prof.surname}}</h1>
+</div>
+<div class="info-container">
+       <h3 class="stat" id="name">Name: {{prof.name}}</h3>
+       <h3 class="stat">Surname: {{prof.surname}}</h3>
+       <h3 class="stat">Email: {{user.email}}</h3>
+       <h3 class="stat">Balance: {{prof.balance}}</h3>
+       <h3 class="stat">About me: {{prof.status}}</h3>
+       <br><br><br>
+       {% if request.user%}
+            <button type="button"><a href="http://127.0.0.1:8000/profile/edit_profile">Edit Profile</a></button>
+       {% endif %}
+
+        <div class="pic-container">
+           {% if prof.picture %}
+                <img src="{{ prof.picture.url }}/" class="pic">
+           {% endif %}
+        </div>
+</div>
+
+
+  
+{% endblock %}

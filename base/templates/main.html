@@ -1,0 +1,50 @@
+<head>
+    {% load static %}
+
+<link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    
+    {% include 'navbar.html' %}
+    {% block content %}
+
+    <div class="home-container">
+        <div class="search-bar">
+            <form action="main" method="get">
+                <input type="text" placeholder="Search for..." name="q">
+                <input type="submit">
+            </form>
+            <hr>
+            <h1>Search by category:</h1>
+            <h2><a href="{% url 'main' %}">All</a></h2>
+            {% for category in categories %}
+                <h2><a href="{% url 'main' %}?q={{ category }}">{{ category }}</a></h2>
+            {% endfor %}
+            <hr>
+        </div>
+        
+        
+        <div class="product-grid">
+            <ul class="products-wrapper">
+                {% for product in products %}
+                <li class="product-card">
+                    <a href="http://127.0.0.1:8000/main/product?p={{ product.name }}" class="product">
+                        {% if product.picture %}
+                        <img src="{{ product.picture.url }}" class="pic">
+                        {% else %}
+                        <img src="#">
+                        {% endif %}
+                        <h2 class="title">{{product.name}}</h2>
+                        <h4 class="rating">{{product.rating}}&#9733;</h4>
+                        <h3 class="cost">{{product.cost}} $</h3>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+    
+    {% endblock %}
+</body>
+</html>

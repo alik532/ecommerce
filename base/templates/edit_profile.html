@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'edit_profile.css' %}">
+
+<div class="profile-header">
+    <h1 class="welcome">WELCOME</h1>
+    <h1 class="creds">{{prof.name}} {{prof.surname}}</h1>
+</div>
+<div class="info-container">
+    <h3>Name: {{prof.name}}</h3>
+        <form action="change_profile" method="get">
+            <h3 class="stat">Surname: <input type="text" value="{{prof.surname}}" name="new_surname"></h3>
+            <h3 class="stat">Email: <input type="text" value="{{user.email}}" name="email"></h3>
+            <h3 class="stat">About me: <input type="text" value="{{prof.status}}" size="110" name="status"></h3>
+            <hr>
+            <br>
+            <input type="submit" class="stat">
+        </form>
+        <div class="pic-container">
+            {% if prof.picture %}
+                <img src="{{ prof.picture.url }}" class="pic">
+            {% else %}
+                <img src="#" class="pic">
+            {% endif %}
+            <form enctype="multipart/form-data" class="edit_img", method="post" >
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" class="change_img">
+            </form>
+        </div>
+</div>
+
+{% endblock %}

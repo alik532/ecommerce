@@ -1,0 +1,51 @@
+.profile-header {
+    position: relative;
+    margin-top: 10px;
+    width: 75%;
+    left: 12.5%;
+    height: 15%;
+    border-radius: 10px;
+    background-color: rgb(163, 187, 115);
+}
+
+.info-container {
+    height: 70%;
+    width: 70%;
+    background-color: rgb(185, 211, 132);
+    position: relative;
+    left: 15%;
+}
+
+.creds {
+    position: absolute;
+    left: 39%;
+    bottom: -15;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+.welcome {
+    position: absolute;
+    left: 40%;
+    top: -10;
+}
+
+.stat {
+    position: relative;
+    top: 50px;
+}
+
+.pic-container {
+    position: absolute;
+    right: 220;
+    top: 50px;
+    border: solid, black;
+}
+
+.pic {
+    height: 200px;
+    width: 200px;
+    border: solid, black;
+    
+}
+

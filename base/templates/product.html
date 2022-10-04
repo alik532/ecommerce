@@ -1,0 +1,61 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'product.css' %}">
+<button type="submit" class="go-back"><a href="/main">Back</a></button>
+<div class="main-content">
+    <div class="info">
+        <h3>{{ product.name }}</h3>
+        <br><br>
+        <h3>Cost: {{ product.cost }}$</h3>
+        <h3>Rating: </h3>
+        {{ product.rating }}
+        {% for i in rating %}
+        &#9733;
+        {% endfor %}
+        <br><br>
+        <button><a href="add_to_cart/{{ product.name }}/">Add to Cart</a></button>
+    </div>
+    
+
+    <div class="observe-product-container">
+        {% if product.picture %}
+        <img src="{{ product.picture.url }}" class="picture">
+        {% else %}
+        <img src="#" class="picture">
+        {% endif %}
+    </div>
+    
+</div>
+
+<div class="details-container">
+    <h3>Description: {{ product.description }}</h3>
+</div>
+
+<div class="comment-section">
+    <div class="add-comment">
+        <h2>Write a comment</h2>
+        <form action="add_comment/{{product.name}}/" method="get">
+            <input type="text" name="comment_text" placeholder="Comment">
+            <input type="number" name="rating" placeholder="1-10 &#9733;">
+            <input type="submit" placeholder="submit">
+        </form>
+    </div>
+    <div class="comments">
+        {% for comment in comments %}
+        <div class="comment">
+            <div class="user">
+                <h3 class="com-user">{{ comment.author }} &nbsp &nbsp{{ comment.rating }} &#9733;</h3>
+            </div>
+            <div class="comment-txt">
+                <h4>{{ comment.text }}</h4>
+            </div>
+            <h6 class="date">{{ comment.date }}</h6>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
